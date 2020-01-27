@@ -374,6 +374,11 @@
                         </path>
                         <!-- jhipster-needle-maven-add-annotation-processor -->
                     </annotationProcessorPaths>
+                    <compilerArgs>
+		                <compilerArg>
+		                       -Amapstruct.defaultComponentModel=spring
+		                </compilerArg>
+            		</compilerArgs>	
                 </configuration>
             </plugin>
             <plugin>

@@ -1,0 +1,90 @@
+
+
+entity Quiz {
+	id Long,
+	nom String
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Personne {
+	id Long,
+	nom String,
+}
+
+entity Joueur{
+
+}
+
+entity Admin{
+
+}
+
+entity Question {
+	id Long,
+	intitule String
+}
+
+/**
+ * The Employee entity.
+ */
+entity Niveau {
+	id Long,
+    intitule String
+}
+
+entity Theme {
+	id Long,
+	intitule String,
+	couleur String
+}
+
+entity Reponse {
+	id Long,
+	intitule String,
+	isTrue Boolean
+}
+
+entity Media{
+	id Long,
+    intitule String,
+  	type String
+}
+
+relationship OneToMany {
+	Quiz{personnes} to Personne{quiz},
+    Media{reponses} to Reponse{media},
+    Media{questions} to Question{media},
+    Theme{questions} to Question{theme},
+    Niveau{questions} to Question{niveau},
+    Quiz{questions} to Question{quiz},
+    Admin{quizs} to Quiz{admin}
+}
+
+
+
+
+
+relationship ManyToMany{
+	Joueur{reponses} to Reponse{questions}
+    
+}
+
+
+
+
+
+
+
+// Set pagination options
+paginate all with pagination
+
+// Use Data Transfert Objects (DTO)
+
+
+// Set service options to all except few
+service * with serviceImpl
+dto * with mapstruct
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
