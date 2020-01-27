@@ -46,8 +46,8 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/QuizAdmin
-    username: QuizAdmin
-    password:
+    username: root
+    password: root
     hikari:
       poolName: Hikari
       auto-commit: false
