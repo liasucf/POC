@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="reponse">
+            <h2><span>Reponse</span> {{reponse.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Intitule</span></dt>
+                <dd>
+                    <span>{{reponse.intitule}}</span>
+                </dd>
+                <dt><span>Is True</span></dt>
+                <dd>
+                    <span>{{reponse.isTrue}}</span>
+                </dd>
+                <dt><span>Media</span></dt>
+                <dd>
+                    <div *ngIf="reponse.mediaId">
+                        <a [routerLink]="['/media', reponse.mediaId, 'view']">{{reponse.mediaId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/reponse', reponse.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

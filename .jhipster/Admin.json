@@ -1,0 +1,22 @@
+{
+    "name": "Admin",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "quiz",
+            "otherEntityRelationshipName": "admin",
+            "relationshipName": "quizs"
+        }
+    ],
+    "changelogDate": "20200127080506",
+    "entityTableName": "admin",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

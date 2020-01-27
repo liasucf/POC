@@ -1,0 +1,49 @@
+{
+    "name": "Question",
+    "fields": [
+        {
+            "fieldName": "intitule",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "media",
+            "otherEntityRelationshipName": "questions",
+            "relationshipName": "media",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "theme",
+            "otherEntityRelationshipName": "questions",
+            "relationshipName": "theme",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "niveau",
+            "otherEntityRelationshipName": "questions",
+            "relationshipName": "niveau",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "quiz",
+            "otherEntityRelationshipName": "questions",
+            "relationshipName": "quiz",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200127080507",
+    "entityTableName": "question",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

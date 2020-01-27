@@ -1,0 +1,29 @@
+{
+    "name": "Personne",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "quiz",
+            "otherEntityRelationshipName": "personnes",
+            "relationshipName": "quiz",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200127080504",
+    "javadoc": "not an ignored comment",
+    "entityTableName": "personne",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

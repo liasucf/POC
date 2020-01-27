@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-question-heading">Create or edit a Question</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_intitule">Intitule</label>
+                    <input type="text" class="form-control" name="intitule" id="field_intitule"
+                           formControlName="intitule"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_media">Media</label>
+                    <select class="form-control" id="field_media" name="media" formControlName="mediaId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="mediaOption.id" *ngFor="let mediaOption of media; trackBy: trackById">{{mediaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_theme">Theme</label>
+                    <select class="form-control" id="field_theme" name="theme" formControlName="themeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="themeOption.id" *ngFor="let themeOption of themes; trackBy: trackById">{{themeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_niveau">Niveau</label>
+                    <select class="form-control" id="field_niveau" name="niveau" formControlName="niveauId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="niveauOption.id" *ngFor="let niveauOption of niveaus; trackBy: trackById">{{niveauOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_quiz">Quiz</label>
+                    <select class="form-control" id="field_quiz" name="quiz" formControlName="quizId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="quizOption.id" *ngFor="let quizOption of quizzes; trackBy: trackById">{{quizOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

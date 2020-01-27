@@ -1,0 +1,40 @@
+{
+    "name": "Reponse",
+    "fields": [
+        {
+            "fieldName": "intitule",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isTrue",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "media",
+            "otherEntityRelationshipName": "reponses",
+            "relationshipName": "media",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "joueur",
+            "otherEntityRelationshipName": "reponses",
+            "relationshipName": "questions",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200127080510",
+    "entityTableName": "reponse",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

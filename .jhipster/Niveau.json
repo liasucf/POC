@@ -1,0 +1,28 @@
+{
+    "name": "Niveau",
+    "fields": [
+        {
+            "fieldName": "intitule",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "question",
+            "otherEntityRelationshipName": "niveau",
+            "relationshipName": "questions"
+        }
+    ],
+    "changelogDate": "20200127080508",
+    "javadoc": "The Employee entity.",
+    "entityTableName": "niveau",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

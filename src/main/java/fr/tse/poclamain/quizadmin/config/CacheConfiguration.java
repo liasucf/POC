@@ -45,6 +45,24 @@ public class CacheConfiguration {
             createCache(cm, fr.tse.poclamain.quizadmin.domain.User.class.getName());
             createCache(cm, fr.tse.poclamain.quizadmin.domain.Authority.class.getName());
             createCache(cm, fr.tse.poclamain.quizadmin.domain.User.class.getName() + ".authorities");
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Quiz.class.getName());
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Quiz.class.getName() + ".personnes");
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Quiz.class.getName() + ".questions");
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Personne.class.getName());
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Joueur.class.getName());
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Joueur.class.getName() + ".reponses");
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Admin.class.getName());
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Admin.class.getName() + ".quizs");
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Question.class.getName());
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Niveau.class.getName());
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Niveau.class.getName() + ".questions");
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Theme.class.getName());
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Theme.class.getName() + ".questions");
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Reponse.class.getName());
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Reponse.class.getName() + ".questions");
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Media.class.getName());
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Media.class.getName() + ".reponses");
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Media.class.getName() + ".questions");
             // jhipster-needle-ehcache-add-entry
         };
     }

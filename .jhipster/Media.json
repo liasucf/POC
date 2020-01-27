@@ -1,0 +1,37 @@
+{
+    "name": "Media",
+    "fields": [
+        {
+            "fieldName": "intitule",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reponse",
+            "otherEntityRelationshipName": "media",
+            "relationshipName": "reponses"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "question",
+            "otherEntityRelationshipName": "media",
+            "relationshipName": "questions"
+        }
+    ],
+    "changelogDate": "20200127080511",
+    "entityTableName": "media",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

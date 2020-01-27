@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Question.
+    -->
+    <changeSet id="20200127080507-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="media_id"
+                                 baseTableName="question"
+                                 constraintName="fk_question_media_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="media"/>
+
+        <addForeignKeyConstraint baseColumnNames="theme_id"
+                                 baseTableName="question"
+                                 constraintName="fk_question_theme_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="theme"/>
+
+        <addForeignKeyConstraint baseColumnNames="niveau_id"
+                                 baseTableName="question"
+                                 constraintName="fk_question_niveau_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="niveau"/>
+
+        <addForeignKeyConstraint baseColumnNames="quiz_id"
+                                 baseTableName="question"
+                                 constraintName="fk_question_quiz_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="quiz"/>
+
+    </changeSet>
+</databaseChangeLog>
