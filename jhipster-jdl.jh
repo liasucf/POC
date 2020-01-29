@@ -58,7 +58,8 @@ relationship OneToMany {
     Theme{questions} to Question{theme},
     Niveau{questions} to Question{niveau},
     Quiz{questions} to Question{quiz},
-    Admin{quizs} to Quiz{admin}
+    Admin{quizs} to Quiz{admin},
+    Question{reponses} to Reponse{question}
 }
 
 

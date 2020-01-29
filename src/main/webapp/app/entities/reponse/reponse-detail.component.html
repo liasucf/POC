@@ -19,6 +19,12 @@
                         <a [routerLink]="['/media', reponse.mediaId, 'view']">{{reponse.mediaId}}</a>
                     </div>
                 </dd>
+                <dt><span>Question</span></dt>
+                <dd>
+                    <div *ngIf="reponse.questionId">
+                        <a [routerLink]="['/question', reponse.questionId, 'view']">{{reponse.questionId}}</a>
+                    </div>
+                </dd>
             </dl>
 
             <button type="submit"

@@ -6,6 +6,8 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A Question.
@@ -24,6 +26,10 @@ public class Question implements Serializable {
 
     @Column(name = "intitule")
     private String intitule;
+
+    @OneToMany(mappedBy = "question")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Reponse> reponses = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties("questions")
@@ -61,6 +67,31 @@ public class Question implements Serializable {
 
     public void setIntitule(String intitule) {
         this.intitule = intitule;
+    }
+
+    public Set<Reponse> getReponses() {
+        return reponses;
+    }
+
+    public Question reponses(Set<Reponse> reponses) {
+        this.reponses = reponses;
+        return this;
+    }
+
+    public Question addReponses(Reponse reponse) {
+        this.reponses.add(reponse);
+        reponse.setQuestion(this);
+        return this;
+    }
+
+    public Question removeReponses(Reponse reponse) {
+        this.reponses.remove(reponse);
+        reponse.setQuestion(null);
+        return this;
+    }
+
+    public void setReponses(Set<Reponse> reponses) {
+        this.reponses = reponses;
     }
 
     public Media getMedia() {

@@ -10,6 +10,10 @@ import { IReponse, Reponse } from 'app/shared/model/reponse.model';
 import { ReponseService } from './reponse.service';
 import { IMedia } from 'app/shared/model/media.model';
 import { MediaService } from 'app/entities/media/media.service';
+import { IQuestion } from 'app/shared/model/question.model';
+import { QuestionService } from 'app/entities/question/question.service';
+
+type SelectableEntity = IMedia | IQuestion;
 
 @Component({
   selector: 'jhi-reponse-update',
@@ -20,16 +24,20 @@ export class ReponseUpdateComponent implements OnInit {
 
   media: IMedia[] = [];
 
+  questions: IQuestion[] = [];
+
   editForm = this.fb.group({
     id: [],
     intitule: [],
     isTrue: [],
-    mediaId: []
+    mediaId: [],
+    questionId: []
   });
 
   constructor(
     protected reponseService: ReponseService,
     protected mediaService: MediaService,
+    protected questionService: QuestionService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -46,6 +54,15 @@ export class ReponseUpdateComponent implements OnInit {
           })
         )
         .subscribe((resBody: IMedia[]) => (this.media = resBody));
+
+      this.questionService
+        .query()
+        .pipe(
+          map((res: HttpResponse<IQuestion[]>) => {
+            return res.body ? res.body : [];
+          })
+        )
+        .subscribe((resBody: IQuestion[]) => (this.questions = resBody));
     });
   }
 
@@ -54,7 +71,8 @@ export class ReponseUpdateComponent implements OnInit {
       id: reponse.id,
       intitule: reponse.intitule,
       isTrue: reponse.isTrue,
-      mediaId: reponse.mediaId
+      mediaId: reponse.mediaId,
+      questionId: reponse.questionId
     });
   }
 
@@ -78,7 +96,8 @@ export class ReponseUpdateComponent implements OnInit {
       id: this.editForm.get(['id'])!.value,
       intitule: this.editForm.get(['intitule'])!.value,
       isTrue: this.editForm.get(['isTrue'])!.value,
-      mediaId: this.editForm.get(['mediaId'])!.value
+      mediaId: this.editForm.get(['mediaId'])!.value,
+      questionId: this.editForm.get(['questionId'])!.value
     };
   }
 
@@ -98,7 +117,7 @@ export class ReponseUpdateComponent implements OnInit {
     this.isSaving = false;
   }
 
-  trackById(index: number, item: IMedia): any {
+  trackById(index: number, item: SelectableEntity): any {
     return item.id;
   }
 }

@@ -17,6 +17,8 @@ public interface QuestionMapper extends EntityMapper<QuestionDTO, Question> {
     @Mapping(source = "quiz.id", target = "quizId")
     QuestionDTO toDto(Question question);
 
+    @Mapping(target = "reponses", ignore = true)
+    @Mapping(target = "removeReponses", ignore = true)
     @Mapping(source = "mediaId", target = "media")
     @Mapping(source = "themeId", target = "theme")
     @Mapping(source = "niveauId", target = "niveau")

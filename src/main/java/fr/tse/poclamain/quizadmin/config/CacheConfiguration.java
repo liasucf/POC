@@ -63,6 +63,7 @@ public class CacheConfiguration {
             createCache(cm, fr.tse.poclamain.quizadmin.domain.Media.class.getName());
             createCache(cm, fr.tse.poclamain.quizadmin.domain.Media.class.getName() + ".reponses");
             createCache(cm, fr.tse.poclamain.quizadmin.domain.Media.class.getName() + ".questions");
+            createCache(cm, fr.tse.poclamain.quizadmin.domain.Question.class.getName() + ".reponses");
             // jhipster-needle-ehcache-add-entry
         };
     }

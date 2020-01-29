@@ -16,6 +16,8 @@ public class ReponseDTO implements Serializable {
 
     private Long mediaId;
 
+    private Long questionId;
+
     public Long getId() {
         return id;
     }
@@ -48,6 +50,14 @@ public class ReponseDTO implements Serializable {
         this.mediaId = mediaId;
     }
 
+    public Long getQuestionId() {
+        return questionId;
+    }
+
+    public void setQuestionId(Long questionId) {
+        this.questionId = questionId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -76,6 +86,7 @@ public class ReponseDTO implements Serializable {
             ", intitule='" + getIntitule() + "'" +
             ", isTrue='" + isIsTrue() + "'" +
             ", mediaId=" + getMediaId() +
+            ", questionId=" + getQuestionId() +
             "}";
     }
 }

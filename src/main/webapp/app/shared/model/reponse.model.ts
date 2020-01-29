@@ -5,6 +5,7 @@ export interface IReponse {
   intitule?: string;
   isTrue?: boolean;
   mediaId?: number;
+  questionId?: number;
   questions?: IJoueur[];
 }
 
@@ -14,6 +15,7 @@ export class Reponse implements IReponse {
     public intitule?: string,
     public isTrue?: boolean,
     public mediaId?: number,
+    public questionId?: number,
     public questions?: IJoueur[]
   ) {
     this.isTrue = this.isTrue || false;

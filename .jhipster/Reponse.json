@@ -19,6 +19,13 @@
             "otherEntityField": "id"
         },
         {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "question",
+            "otherEntityRelationshipName": "reponses",
+            "relationshipName": "question",
+            "otherEntityField": "id"
+        },
+        {
             "relationshipType": "many-to-many",
             "otherEntityName": "joueur",
             "otherEntityRelationshipName": "reponses",

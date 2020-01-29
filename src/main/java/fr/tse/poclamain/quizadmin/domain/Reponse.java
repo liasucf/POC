@@ -35,6 +35,10 @@ public class Reponse implements Serializable {
     @JsonIgnoreProperties("reponses")
     private Media media;
 
+    @ManyToOne
+    @JsonIgnoreProperties("reponses")
+    private Question question;
+
     @ManyToMany(mappedBy = "reponses")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JsonIgnore
@@ -86,6 +90,19 @@ public class Reponse implements Serializable {
 
     public void setMedia(Media media) {
         this.media = media;
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public Reponse question(Question question) {
+        this.question = question;
+        return this;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 
     public Set<Joueur> getQuestions() {

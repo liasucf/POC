@@ -27,6 +27,13 @@
                         <option [ngValue]="mediaOption.id" *ngFor="let mediaOption of media; trackBy: trackById">{{mediaOption.id}}</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_question">Question</label>
+                    <select class="form-control" id="field_question" name="question" formControlName="questionId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="questionOption.id" *ngFor="let questionOption of questions; trackBy: trackById">{{questionOption.id}}</option>
+                    </select>
+                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">

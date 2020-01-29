@@ -22,6 +22,7 @@
             <th scope="col"  jhiSortBy="intitule"><span>Intitule</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="isTrue"><span>Is True</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="mediaId"><span>Media</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="questionId"><span>Question</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"></th>
             </tr>
             </thead>
@@ -33,6 +34,11 @@
                 <td>
                     <div *ngIf="reponse.mediaId">
                         <a [routerLink]="['/media', reponse.mediaId , 'view' ]" >{{reponse.mediaId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="reponse.questionId">
+                        <a [routerLink]="['/question', reponse.questionId , 'view' ]" >{{reponse.questionId}}</a>
                     </div>
                 </td>
                 <td class="text-right">
